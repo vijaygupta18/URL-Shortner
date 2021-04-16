@@ -7,7 +7,7 @@ app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
 
 // db section//
-const uri="mongodb+srv://vijay:kDh2pU1W6bUDzhS0@clustertest.pyn38.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+const uri= "" //mogo db url/
 mongoose.connect(uri, {
   useNewUrlParser: true, useUnifiedTopology: true
 })
