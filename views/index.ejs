@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>URL Shortner</title>
+  <style>
+    body{
+      overflow: auto;
+  background: linear-gradient(to bottom, #e2e2e2, #ffffff);
+  background-image: linear-gradient(rgba(0, 0, 155, 0.4), rgba(241, 241, 110, 0.3)),
+  url("https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/hairdresser-scissors-on-black-background-jelena-jovanovic.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="text-align: center; margin-top: 5%; margin-bottom: 40px;color:white;">URL Shortner :</h1>
+    <div class="card w-75" style="margin: auto;">
+        <div class="card-body">
+          <h5 class="card-title"> Enter Full URL :</h5>
+          <form action="/shortUrls" method="POST" class="my-4 form-inline">
+            <label for="fullUrl" class="sr-only">Url</label>
+            <input required placeholder="Url" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2">
+            <button class="btn btn-success" type="submit">Make it Short</button>
+          </form>
+          
+        </div>
+      </div>
+      
+    
+    
+    <table style=" border-radius: 25px; background-color: white;display: table; margin:auto;width: 80vh; margin-top: 2%;" class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Full URL</th>
+          <th>Short URL</th>
+        </tr>
+      </thead>
+      <tbody id="tab">
+        <% urlcollection.forEach(Url => { %>
+          <tr>
+            <td ><a href="<%= Url.full %>"><%= Url.full %></a></td>
+            <td><a href="<%= Url.short %>"><%= Url.short %></a></td>
+            
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
